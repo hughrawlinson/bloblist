@@ -11,39 +11,30 @@ class Blob {
   constructor(position) {
     this.position = position;
     this.velocity = createVector(0,0);
-    this.radius = 100;
+    this.radius = 10;
     this.speed = this.radius;
-    this.resolution = this.radius;
+    this.resolution = 50;
   }
 
   applyForce(direction) {
-    this.velocity.add(direction.copy().mult(2).limit(this.speed));
+    this.velocity.add(direction.copy()).normalize().mult(this.speed);
   }
 
   draw () {
     this.velocity = this.velocity.mult(0.8);
-    //this.position.add(this.velocity);
+    this.position.add(this.velocity);
 
     push();
     translate(this.position.x, this.position.y);
     beginShape();
-    let values = {};
     for (let i = 0; i < TWO_PI; i += TWO_PI/this.resolution) {
       const angle = p5.Vector.fromAngle(i);
-
-      if(!values[TWO_PI-i]){
-        values[i] = this.velocity.mag() * (((i - this.velocity.heading()) + PI) % TWO_PI - PI)/PI;
-        angle.mult(this.radius);
-      } else {
-        angle.mult(this.radius);
-      }
-
+      angle.mult(this.radius + (this.velocity.mag()/2 * p5.Vector.angleBetween(angle, this.velocity)/PI) - this.velocity.mag()/4);
       vertex(angle.x, angle.y);
     }
     endShape();
     pop();
   }
-  
 }
 
 function setup() {
