@@ -1,6 +1,0 @@
-{
-  "name": "p5project",
-  "dependencies": {
-    "p5js": "latest"
-  }
-}
