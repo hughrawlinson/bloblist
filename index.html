@@ -15,9 +15,96 @@
       margin: 0;
     }
   </style>
+  <link href="https://sp-bootstrap.global.ssl.fastly.net/8.0.0/sp-bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
+  <nav class="navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">
+          <span class="navbar-logo">Spotify</span>
+          <span class="navbar-title">Title</span>
+        </a>
+      </div>
+    </div><!-- /.container -->
+  </nav>
+  <div class="container">
+    <div class="row">
+      <h1 id="trackMetadata"></h1>
+      <a href="" class="btn btn-primary btn-sm" id="openButton">Open in Spotify</a>
+    </div>
+    <div class="row">
+      <div id="processingCanvas">
+      </div>
+    </div>
+  </div>
+  <footer class="footer footer-default" role="contentinfo">
+    <div class="container">
+      <nav class="row">
+        <div class="col-xs-12 col-md-3">
+          <div class="footer-logo">
+            <a href="#">Spotify</a>
+          </div>
+        </div>
+        <div class="col-xs-6 col-sm-4 col-md-2">
+          <h3 class="nav-title">Other Hacks</h3>
+          <ul class="nav">
+            <li><a href="#">Link 1</a></li>
+          </ul>
+        </div>
+        <div class="col-xs-6 col-sm-4 col-md-2">
+          <h3 class="nav-title">Spotify Platform</h3>
+          <ul class="nav">
+            <li><a href="https://developer.spotify.com/">Developer Portal</a></li>
+            <li><a href="https://developer.spotify.com/web-api">Web API</a></li>
+          </ul>
+        </div>
+        <div class="col-xs-12 col-md-5 col-social">
+          <ul class="nav">
+            <li>
+              <a href="http://stackoverflow.com/questions/tagged/spotify">
+                <svg class="social-icon" id="stackoverflow-icon" viewBox="0 0 120 120">
+                  <polygon points="84.4,93.8 84.4,70.6 92.1,70.6 92.1,101.5 22.6,101.5 22.6,70.6 30.3,70.6 30.3,93.8 "/>
+                  <path d="M38.8,68.4l37.8,7.9l1.6-7.6l-37.8-7.9L38.8,68.4z M43.8,50.4l35,16.3l3.2-7l-35-16.4L43.8,50.4z M53.5,33.2
+                  l29.7,24.7l4.9-5.9L58.4,27.3L53.5,33.2z M72.7,14.9l-6.2,4.6l23,31l6.2-4.6L72.7,14.9z M38,86h38.6v-7.7H38V86z"/>
+                </svg>
+                <span class="social-text">Stack Overflow</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://twitter.com/SpotifyPlatform">
+                <svg class="social-icon" id="twitter-icon" viewBox="0 0 448 448">
+                  <path d="m27 347.75q8.75 1 19.5 1 56.25 0 100.25-34.5-26.25-0.5-47-16.125t-28.5-39.875q8.25 1.25 15.25 1.25 10.75 0 21.25-2.75-28-5.75-46.375-27.875t-18.375-51.375v-1q17 9.5 36.5 10.25-16.5-11-26.25-28.75t-9.75-38.5q0-22 11-40.75 30.25 37.25 73.625 59.625t92.875 24.875q-2-9.5-2-18.5 0-33.5 23.625-57.125t57.125-23.625q35 0 59 25.5 27.25-5.25 51.25-19.5-9.25 28.75-35.5 44.5 23.25-2.5 46.5-12.5-16.75 24.5-40.5 41.75 0.25 3.5 0.25 10.5 0 32.5-9.5 64.875t-28.875 62.125-46.125 52.625-64.5 36.5-80.75 13.625q-67.75 0-124-36.25z"/>
+                </svg>
+                <span class="social-text">Twitter</span></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <nav class="row row-small">
+        <div class="col-xs-7 col-md-5 col-md-offset-3">
+          <ul class="nav nav-small">
+            <li>
+              <a href="#">Legal</a>
+            </li>
+            <li>
+              <a href="#">Cookies</a>
+            </li>
+            <li>
+              <a id="_bapw-link" href="http://info.evidon.com/pub_info/1120?v=1" target="_blank"><img src="https://cdn.betrad.com/pub/icon1.png" id="_bapw-icon" class="img-adchoices"> <span>AdChoices</span></a>
+              <script>
+                /*<![CDATA[*/(function(){var c=1120,g=1816,b=false,i=document,f=i.getElementById("_bapw-link"),h=(i.location.protocol=="https:"),a=(h?"https":"http")+"://";function e(j){var d=new Image();d.src=a+"l.betrad.com/pub/p.gif?pid="+c+"&ocid="+g+"&i"+j+"=1&r="+Math.random()}f.onclick=function(){e("c");return true};e("i")}());/*]]>*/
+              </script>
+            </li>
+          </ul>
+        </div>
+        <div class="col-xs-5 col-md-4 text-right">
+          <small class="copyright">&copy; 2017 Spotify AB</small>
+        </div>
+      </nav>
+    </div>
+  </footer>
 </body>
 
 </html>
